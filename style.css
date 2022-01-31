@@ -68,6 +68,7 @@ body{
 
     .main {
         flex-wrap: wrap;
+        margin-top: 24px;
     }
 
     .main .tag{
