@@ -38,7 +38,7 @@
         var tagSeconds = document.querySelector('#seconds .time')
         var x = setInterval(function(){
             var now = new Date().getTime();
-            var distance = countDownTime-now
+            var distance = countDownTime- now
 
             var days = Math.floor(distance/(1000*60*60*24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -50,9 +50,20 @@
             tagMinutes.innerHTML = minutes
             tagSeconds.innerHTML = seconds
             
+            if(distance <= 10){
+                tagDays.style.backgroundColor = 'yellow'
+                tagDays.style.color = 'red'
+                tagHours.style.backgroundColor = 'yellow'
+                tagHours.style.color = 'red'
+                tagMinutes.style.backgroundColor = 'yellow'
+                tagMinutes.style.color = 'red'
+                tagSeconds.style.backgroundColor = 'yellow'
+                tagSeconds.style.color = 'red'
+            }
+
             if(distance <0){
                 clearInterval(x)
-
+                document.querySelector('.header h2').innerHTML = 'Chúc Mừng Năm Mới'
             }
         },1000)
     </script>
